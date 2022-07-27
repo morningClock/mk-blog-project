@@ -8,9 +8,10 @@ jobs:
         uses: actions/checkout@master
 
       - name: vuepress-deploy
-        uses: morningClock/mk-blog-project@main
+        uses: jenkey2011/vuepress-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          TARGET_REPO: morningClock/mk-blog-project
           TARGET_BRANCH: gh-pages
           BUILD_SCRIPT: yarn && yarn build
           BUILD_DIR: docs/.vuepress/dist
