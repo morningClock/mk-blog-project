@@ -4,7 +4,7 @@ heroImage: /logo.svg
 heroText: morningClock项目笔记.
 tagline: 希望经验能启迪后来者
 actionText: 开始探索之旅 →
-actionLink: /mk-blog-project/myproject/mk-shop/项目简介.html
+actionLink: /myproject/mk-shop/项目简介.html
 features:
   - title: 需求分析
     details: 开发任务前进行必要的需求分析，业务分析，功能点分析与整理，彻底掌握项目开发所有环节。
