@@ -1,7 +1,11 @@
 const { defaultTheme } = require('vuepress')
 
 module.exports = {
-  base: '/mk-blog-project/',
+  base: '/mk-blog-project/', // github-page部署站点的基础路径
+  head: [
+    // favicon
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   markdown: {
     // 解决中文资源路径问题
     extendMarkdown: md => {
@@ -9,7 +13,7 @@ module.exports = {
     }
   },
   lang: 'zh-CN',
-  title: 'MorningClock 笔记',
+  title: '项目开发笔记',
   description: 'MorningClock 项目笔记汇总',
   themeConfig: {
     nav: [
