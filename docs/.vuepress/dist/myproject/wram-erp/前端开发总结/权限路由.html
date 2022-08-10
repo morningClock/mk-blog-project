@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>权限路由 | 项目开发笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/mk-blog-project/favicon.ico">
+    <meta name="description" content="MorningClock 项目笔记汇总">
+    
+    <link rel="preload" href="/mk-blog-project/assets/css/0.styles.301486dc.css" as="style"><link rel="preload" href="/mk-blog-project/assets/js/app.72196204.js" as="script"><link rel="preload" href="/mk-blog-project/assets/js/2.a0404b99.js" as="script"><link rel="preload" href="/mk-blog-project/assets/js/16.77e343f1.js" as="script"><link rel="prefetch" href="/mk-blog-project/assets/js/10.24dbf39e.js"><link rel="prefetch" href="/mk-blog-project/assets/js/11.f5b97f60.js"><link rel="prefetch" href="/mk-blog-project/assets/js/12.98b66878.js"><link rel="prefetch" href="/mk-blog-project/assets/js/13.948ab94c.js"><link rel="prefetch" href="/mk-blog-project/assets/js/14.80cf4a77.js"><link rel="prefetch" href="/mk-blog-project/assets/js/15.db9f2c8e.js"><link rel="prefetch" href="/mk-blog-project/assets/js/17.f45531f9.js"><link rel="prefetch" href="/mk-blog-project/assets/js/18.03dbb045.js"><link rel="prefetch" href="/mk-blog-project/assets/js/19.68dffc24.js"><link rel="prefetch" href="/mk-blog-project/assets/js/20.1bf2ed65.js"><link rel="prefetch" href="/mk-blog-project/assets/js/21.53d0861c.js"><link rel="prefetch" href="/mk-blog-project/assets/js/22.8ef202ce.js"><link rel="prefetch" href="/mk-blog-project/assets/js/23.9aa09ca8.js"><link rel="prefetch" href="/mk-blog-project/assets/js/24.7cced5ce.js"><link rel="prefetch" href="/mk-blog-project/assets/js/25.c36b50d0.js"><link rel="prefetch" href="/mk-blog-project/assets/js/26.b9d1dd86.js"><link rel="prefetch" href="/mk-blog-project/assets/js/27.137b8242.js"><link rel="prefetch" href="/mk-blog-project/assets/js/28.c74b9cfd.js"><link rel="prefetch" href="/mk-blog-project/assets/js/29.b5b78611.js"><link rel="prefetch" href="/mk-blog-project/assets/js/3.9ebc6227.js"><link rel="prefetch" href="/mk-blog-project/assets/js/30.317d8713.js"><link rel="prefetch" href="/mk-blog-project/assets/js/31.301f2809.js"><link rel="prefetch" href="/mk-blog-project/assets/js/32.79d72f4d.js"><link rel="prefetch" href="/mk-blog-project/assets/js/33.fd24fb0b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/34.3aa73171.js"><link rel="prefetch" href="/mk-blog-project/assets/js/35.19a296f6.js"><link rel="prefetch" href="/mk-blog-project/assets/js/36.1b456c05.js"><link rel="prefetch" href="/mk-blog-project/assets/js/37.964e3993.js"><link rel="prefetch" href="/mk-blog-project/assets/js/38.36e4c4f0.js"><link rel="prefetch" href="/mk-blog-project/assets/js/39.8d9e12ac.js"><link rel="prefetch" href="/mk-blog-project/assets/js/4.84ae923a.js"><link rel="prefetch" href="/mk-blog-project/assets/js/40.11459f42.js"><link rel="prefetch" href="/mk-blog-project/assets/js/41.3f935007.js"><link rel="prefetch" href="/mk-blog-project/assets/js/42.ebf26381.js"><link rel="prefetch" href="/mk-blog-project/assets/js/43.42a1a837.js"><link rel="prefetch" href="/mk-blog-project/assets/js/44.9a30f24d.js"><link rel="prefetch" href="/mk-blog-project/assets/js/45.5f3586d0.js"><link rel="prefetch" href="/mk-blog-project/assets/js/46.5f71e910.js"><link rel="prefetch" href="/mk-blog-project/assets/js/47.11217156.js"><link rel="prefetch" href="/mk-blog-project/assets/js/48.a409a09f.js"><link rel="prefetch" href="/mk-blog-project/assets/js/5.afbfabe0.js"><link rel="prefetch" href="/mk-blog-project/assets/js/6.39f4c228.js"><link rel="prefetch" href="/mk-blog-project/assets/js/7.f4f13a11.js"><link rel="prefetch" href="/mk-blog-project/assets/js/8.eaca8184.js"><link rel="prefetch" href="/mk-blog-project/assets/js/9.66542733.js">
+    <link rel="stylesheet" href="/mk-blog-project/assets/css/0.styles.301486dc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mk-blog-project/" class="home-link router-link-active"><!----> <span class="site-name">项目开发笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mk-blog-project/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="nav-link">
+  MK商城
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="nav-link">
+  WRAM ERP管理系统
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mk-blog-project/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="nav-link">
+  MK商城
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="nav-link">
+  WRAM ERP管理系统
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="sidebar-link">WRAM-ERP简介</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目分析</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端开发总结</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/登录流程.html" class="sidebar-link">登录流程修改</a></li><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/请求封装.html" class="sidebar-link">请求封装</a></li><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/权限路由.html" class="active sidebar-link">权限路由</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/权限路由.html#路由设计" class="sidebar-link">路由设计</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/权限路由.html#实现思路" class="sidebar-link">实现思路</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/权限路由.html#实现具体流程图" class="sidebar-link">实现具体流程图</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/权限路由.html#按钮级权限管理" class="sidebar-link">按钮级权限管理</a></li></ul></li><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/路由动态生成侧边栏.html" class="sidebar-link">路由动态生成侧边栏原理与实现</a></li><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/数据看板实现.html" class="sidebar-link">Echarts组件封装</a></li><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/常见问题.html" class="sidebar-link">常见问题</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>组件的封装与增强</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>思考与拓展</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>日志</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="权限路由"><a href="#权限路由" class="header-anchor">#</a> 权限路由</h1> <h2 id="路由设计"><a href="#路由设计" class="header-anchor">#</a> 路由设计</h2> <p>​	权限路由就是根据用户的角色，分配用户是否有权访问某个路由页面。当然，权限路由也区分了由前端管理和后端管理，这两种路由有什么区别呢？</p> <ul><li><p><strong>前端路由</strong></p> <p>把路由全部静态的形式写在router中，可以使用路由拦截器与<code>meta</code>标记进行简单的权限路由，也可以使用<code>router.addRoute</code>进行动态路由加载。实际上它们都是在前端写好的路由表中生成，需要注意的是权限路由不单单只要在前端进行权限过滤，其实接口也是必须要进行权限校验的，毕竟前端的一切都是不安全的，可以篡改的。</p> <ul><li>优点：路由表由前端管理，只需要通过角色字段进行权限分配。</li> <li>缺点：不可动态配置，不够灵活，每次修改了路由信息，都需要前端进行重新编写、打包编译和部署。</li></ul></li> <li><p><strong>后端路由</strong></p> <p>把路由表交给后端处理存于数据库，后端可以提供对应的接口，进行路由表的管理，当路由表发生改变时，不需要前端重新修改和打包部署网站。</p> <ul><li>优点：灵活管理各个的权限。</li> <li>缺点：需要后端新增路由表，编写相关的逻辑，而且前端新开发一个页面还要配一下路由和权限。</li></ul></li></ul> <h2 id="实现思路"><a href="#实现思路" class="header-anchor">#</a> 实现思路</h2> <ol><li>创建vue实例的时候将vue-router挂载，但这个时候vue-router挂载一些登录或者不用权限的公用的页面。</li> <li>用户登录，跳转到需要权限页面时，获取用户信息</li> <li>根据用户信息中的角色信息，过滤异步路由表中的路由，获得当前角色的异步路由表</li> <li>使用<code>router.addRoutes()</code>动态插入路由，并跳转到目标页面</li></ol> <h2 id="实现具体流程图"><a href="#实现具体流程图" class="header-anchor">#</a> 实现具体流程图</h2> <p><img src="/mk-blog-project/assets/img/权限路由流程.adf3066b.jpg" alt="权限路由流程"></p> <blockquote><p>注意：</p> <p>在生成路由表后，不能直接next()， 而是要 next({...to, replace: true})进行路由替换重新跳转。</p> <p>原因说明：</p> <ol><li>路由跳转，根据目标地址从router中提取route信息，由于此时还没addRouters，所以解析出来的route是个空的，不包含组件。</li> <li>执行beforeEach钩子函数，然后内部会动态添加路由，但此时route已经生成了，不是说router.addRoutes后，这个route会自动更新，如果直接next()，最终渲染的就是空的。</li> <li>调用next({ ...to, replace: true })，会abort刚刚的跳转，然后重新走一遍上述逻辑，这时从router中提取的route信息就包含组件了，之后就和正常逻辑一样了。</li></ol></blockquote> <h2 id="按钮级权限管理"><a href="#按钮级权限管理" class="header-anchor">#</a> 按钮级权限管理</h2> <blockquote><p>有很多人一直在问关于按钮级别粒度的权限控制怎么做。我司现在是这样的，真正需要按钮级别控制的地方不是很多，现在是通过获取到用户的role之后，在前端用v-if手动判断来区分不同权限对应的按钮的。理由前面也说了，我司颗粒度的权限判断是交给后端来做的，每个操作后端都会进行权限判断。而且我觉得其实前端真正需要按钮级别判断的地方不是很多，如果一个页面有很多种不同权限的按钮，我觉得更多的应该是考虑产品层面是否设计合理。当然你强行说我想做按钮级别的权限控制，你也可以参照路由层面的做法，搞一个操作权限表。。。但个人觉得有点多此一举。或者将它封装成一个指令都是可以的。</p> <p>作者：花裤衩
+链接：https://juejin.cn/post/6844903478880370701</p></blockquote> <h3 id="v-permission指令封装"><a href="#v-permission指令封装" class="header-anchor">#</a> <code>v-permission</code>指令封装</h3> <p>​	一般权限控制按钮，可以直接使用<code>v-if</code>指令根据用户的角色进行判断是否渲染，但是写多了会有一个问题，就是会让模板变得难看且不那么容易理解，那么我们可以进行一个语义化的封装，将本来<code>v-if</code>的判断封装成一个指令，这样更易读而且可以写少一点代码。</p> <h3 id="前置知识"><a href="#前置知识" class="header-anchor">#</a> 前置知识</h3> <ul><li><p>自定义指令钩子函数</p> <p>一个指令定义对象可以提供如下几个钩子函数 (均为可选)：</p> <p>**bind：**只调用一次，指令第一次绑定到元素时调用，在这里可以进行一次初始化设置；</p> <p>**inserted：**被绑定元素插入父节点时调用；</p> <p>**update：**在 bind 之后立即以初始值为参数第一次调用，之后每当绑定值变化时调用，参数为新值与旧值；</p> <p>**componentUpdated：**指令所在组件的 VNode 及其子 VNode 全部更新后调用；</p> <p>**unbind：**只调用一次，指令与元素解绑时调用；</p></li> <li><p>自定义插件</p> <div class="language-js extra-class"><pre class="language-js"><code>MyPlugin<span class="token punctuation">.</span><span class="token function-variable function">install</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">Vue<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 1. 添加全局方法或 property</span>
+  Vue<span class="token punctuation">.</span><span class="token function-variable function">myGlobalMethod</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 逻辑...</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 2. 添加全局资源</span>
+  Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'my-directive'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function">bind</span> <span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding<span class="token punctuation">,</span> vnode<span class="token punctuation">,</span> oldVnode</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 逻辑...</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 3. 注入组件选项</span>
+  Vue<span class="token punctuation">.</span><span class="token function">mixin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">created</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 逻辑...</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 4. 添加实例方法</span>
+  <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$myMethod</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">methodOptions</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 逻辑...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li></ul> <h3 id="具体实现"><a href="#具体实现" class="header-anchor">#</a> 具体实现</h3> <ul><li><p>指令permission.js</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'@/store'</span>
+
+<span class="token comment">// 案例： v-permission = &quot;['admin']&quot;</span>
+<span class="token keyword">function</span> <span class="token function">checkPermission</span><span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> value <span class="token punctuation">}</span> <span class="token operator">=</span> binding
+  <span class="token keyword">const</span> roles <span class="token operator">=</span> store<span class="token punctuation">.</span>getters <span class="token operator">&amp;&amp;</span> store<span class="token punctuation">.</span>getters<span class="token punctuation">.</span>roles
+  <span class="token comment">// 遍历数组，查询路由角色是否匹配，存在的将节点移除</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">&amp;&amp;</span> value <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> permissionRoles <span class="token operator">=</span> value
+
+      <span class="token keyword">const</span> hasPermission <span class="token operator">=</span> roles<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token parameter">role</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> permissionRoles<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>role<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>hasPermission<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        el<span class="token punctuation">.</span>parentNode <span class="token operator">&amp;&amp;</span> el<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">need roles! Like v-permission=&quot;['admin','editor']&quot;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">inserted</span><span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">checkPermission</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> binding<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">update</span><span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">checkPermission</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> binding<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></li> <li><p>插件开发<code>permission/index.js</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> permission <span class="token keyword">from</span> <span class="token string">'./permission'</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">install</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">Vue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'permission'</span><span class="token punctuation">,</span> permission<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 兼容性处理：</span>
+<span class="token comment">// 还要考虑通过 script引入 vue 的情况</span>
+<span class="token comment">// 当script引入Vue时，会在window挂载Vue，此时</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>Vue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  window<span class="token punctuation">[</span><span class="token string">'permission'</span><span class="token punctuation">]</span> <span class="token operator">=</span> permission <span class="token comment">// 为了在scirpt引入情况下，install内的function能够正确找到资源</span>
+  Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>install<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// eslint-disable-line</span>
+<span class="token punctuation">}</span>
+
+permission<span class="token punctuation">.</span>install <span class="token operator">=</span> install
+<span class="token keyword">export</span> <span class="token keyword">default</span> permission
+
+</code></pre></div></li> <li><p>拓展</p> <ul><li>VueRouter的matcher，实现替换路由</li></ul></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mk-blog-project/myproject/wram-erp/前端开发总结/请求封装.html" class="prev">
+        请求封装
+      </a></span> <span class="next"><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/路由动态生成侧边栏.html">
+        路由动态生成侧边栏原理与实现
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/mk-blog-project/assets/js/app.72196204.js" defer></script><script src="/mk-blog-project/assets/js/2.a0404b99.js" defer></script><script src="/mk-blog-project/assets/js/16.77e343f1.js" defer></script>
+  </body>
+</html>
