@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Echarts组件封装 | 项目开发笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/mk-blog-project/favicon.ico">
+    <meta name="description" content="MorningClock 项目笔记汇总">
+    
+    <link rel="preload" href="/mk-blog-project/assets/css/0.styles.301486dc.css" as="style"><link rel="preload" href="/mk-blog-project/assets/js/app.bac87496.js" as="script"><link rel="preload" href="/mk-blog-project/assets/js/2.b1c6a5e6.js" as="script"><link rel="preload" href="/mk-blog-project/assets/js/31.54984285.js" as="script"><link rel="prefetch" href="/mk-blog-project/assets/js/10.19e46dc3.js"><link rel="prefetch" href="/mk-blog-project/assets/js/11.b375208f.js"><link rel="prefetch" href="/mk-blog-project/assets/js/12.00037ac2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/13.9b17db79.js"><link rel="prefetch" href="/mk-blog-project/assets/js/14.172ae2a2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/15.7c863125.js"><link rel="prefetch" href="/mk-blog-project/assets/js/16.e022710b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/17.1a7cab84.js"><link rel="prefetch" href="/mk-blog-project/assets/js/18.7ff0e9f6.js"><link rel="prefetch" href="/mk-blog-project/assets/js/19.9d9b7b96.js"><link rel="prefetch" href="/mk-blog-project/assets/js/20.f8875100.js"><link rel="prefetch" href="/mk-blog-project/assets/js/21.7e620d98.js"><link rel="prefetch" href="/mk-blog-project/assets/js/22.f91162a1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/23.1b0e554e.js"><link rel="prefetch" href="/mk-blog-project/assets/js/24.55876c58.js"><link rel="prefetch" href="/mk-blog-project/assets/js/25.da170451.js"><link rel="prefetch" href="/mk-blog-project/assets/js/26.79c4e1e5.js"><link rel="prefetch" href="/mk-blog-project/assets/js/27.2cbb3337.js"><link rel="prefetch" href="/mk-blog-project/assets/js/28.d4a96bf7.js"><link rel="prefetch" href="/mk-blog-project/assets/js/29.25e2148c.js"><link rel="prefetch" href="/mk-blog-project/assets/js/3.c7aac3f1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/30.cf18d8f9.js"><link rel="prefetch" href="/mk-blog-project/assets/js/32.7b699509.js"><link rel="prefetch" href="/mk-blog-project/assets/js/33.e5994047.js"><link rel="prefetch" href="/mk-blog-project/assets/js/34.088870d8.js"><link rel="prefetch" href="/mk-blog-project/assets/js/35.bcabbc0b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/36.682668ac.js"><link rel="prefetch" href="/mk-blog-project/assets/js/37.e8a392e1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/38.07179d5b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/39.edb6402a.js"><link rel="prefetch" href="/mk-blog-project/assets/js/4.a9fb322d.js"><link rel="prefetch" href="/mk-blog-project/assets/js/40.948300a2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/41.4c0b3309.js"><link rel="prefetch" href="/mk-blog-project/assets/js/42.889e7f9a.js"><link rel="prefetch" href="/mk-blog-project/assets/js/43.c7fa0161.js"><link rel="prefetch" href="/mk-blog-project/assets/js/44.b1ff2aad.js"><link rel="prefetch" href="/mk-blog-project/assets/js/45.b6075b1c.js"><link rel="prefetch" href="/mk-blog-project/assets/js/46.2cfe85f4.js"><link rel="prefetch" href="/mk-blog-project/assets/js/47.f9db8363.js"><link rel="prefetch" href="/mk-blog-project/assets/js/48.743059dc.js"><link rel="prefetch" href="/mk-blog-project/assets/js/5.2b90833b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/6.72cfb263.js"><link rel="prefetch" href="/mk-blog-project/assets/js/7.03dee6ea.js"><link rel="prefetch" href="/mk-blog-project/assets/js/8.eaca8184.js"><link rel="prefetch" href="/mk-blog-project/assets/js/9.ee98aea0.js">
+    <link rel="stylesheet" href="/mk-blog-project/assets/css/0.styles.301486dc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mk-blog-project/" class="home-link router-link-active"><!----> <span class="site-name">项目开发笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mk-blog-project/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="nav-link">
+  MK商城
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="nav-link">
+  WRAM ERP管理系统
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mk-blog-project/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="nav-link">
+  MK商城
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="nav-link">
+  WRAM ERP管理系统
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="sidebar-link">WRAM-ERP简介</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目分析</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>前端开发总结</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/登录流程.html" class="sidebar-link">登录流程修改</a></li><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/请求封装.html" class="sidebar-link">请求封装</a></li><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/权限路由.html" class="sidebar-link">权限路由</a></li><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/路由动态生成侧边栏.html" class="sidebar-link">路由动态生成侧边栏原理与实现</a></li><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/数据看板实现.html" class="active sidebar-link">Echarts组件封装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/数据看板实现.html#echarts配置" class="sidebar-link">echarts配置</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/数据看板实现.html#遇到的问题总结" class="sidebar-link">遇到的问题总结</a></li></ul></li><li><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/常见问题.html" class="sidebar-link">常见问题</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>组件的封装与增强</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>思考与拓展</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>日志</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="echarts组件封装"><a href="#echarts组件封装" class="header-anchor">#</a> Echarts组件封装</h1> <h2 id="echarts配置"><a href="#echarts配置" class="header-anchor">#</a> echarts配置</h2> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> option <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 设置echarts的title标题</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 浮动选项的配置</span>
+    <span class="token literal-property property">legend</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">right</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 绘图位置的配置</span>
+    <span class="token literal-property property">grid</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">left</span><span class="token operator">:</span> <span class="token string">&quot;15%&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 工具箱配置（鼠标移入显示系列的阴影）</span>
+    <span class="token literal-property property">tooltip</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">&quot;axis&quot;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">axisPointer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;shadow&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// x轴系列配置，配置x轴坐标对应的项目名称</span>
+    <span class="token literal-property property">xAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;category&quot;</span><span class="token punctuation">,</span>
+        <span class="token comment">// 名称配置（旋转50度）</span>
+        <span class="token literal-property property">axisLabel</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">inside</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">rotate</span><span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span> products<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// y轴配置</span>
+    <span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 缩放功能配置</span>
+    <span class="token literal-property property">dataZoom</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;inside&quot;</span><span class="token punctuation">,</span>
+            <span class="token comment">// 数据窗口范围的起始百分比</span>
+            <span class="token literal-property property">start</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token comment">// 数据窗口范围的结束百分比</span>
+            <span class="token literal-property property">end</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+            <span class="token comment">// 是否锁定选择区域（或叫做数据窗口）的大小，如果设置为 true 则锁定选择区域的大小，也就是说，只能平移，不能缩放</span>
+            <span class="token literal-property property">zoomLock</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// 系列配置，使用柱状图显示数据，配置系列的数据</span>
+    <span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&quot;数量&quot;</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;bar&quot;</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">emphasis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token literal-property property">focus</span><span class="token operator">:</span> <span class="token string">&quot;series&quot;</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">blurScope</span><span class="token operator">:</span> <span class="token string">&quot;coordinateSystem&quot;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">labelLine</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">data</span><span class="token operator">:</span> values<span class="token punctuation">,</span>
+            <span class="token literal-property property">itemStyle</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                color<span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="遇到的问题总结"><a href="#遇到的问题总结" class="header-anchor">#</a> 遇到的问题总结</h2> <ol><li><p><strong>v-if 导致ref 获取不到元素</strong></p> <p>**场景：**父组件进行异步数据获取，更改loading状态，再通过props传递，子组件根据loading熟悉进行图表的渲染。</p> <p>**原因：**由于异步数据未获取完成的时候，图表子组件已经挂载，此时子组件监听的loading状态为false，图表对应的元素，通过v-if挂载，此时未挂载，所以在mounted阶段无法获取到的。</p> <p><strong>解决方案：</strong></p> <ol><li><strong>使用v-if 进行子组件的挂载</strong>，此时子组件mounted阶段就已经拥有了父组件传递的异步请求回来的数据。</li> <li><strong>子组件中使用v-show替代v-if</strong>（这个方案不适用与我的项目，因为我的组件要依赖异步数据来创建echats实例，在初步挂载子组件时，mounted中无法获取到父组件的异步数据，会导致无法获取到DOM元素）</li> <li><strong>(推荐) 使用watch监听异步数据的更新</strong>，把mounted阶段的处理，放入响应回调的handler，此时可以正确的处理子组件的数据。我的组件就是监听父组件loading状态的更新，只有loading为true时（异步数据已成功获取），再进行数据的挂载与渲染。</li></ol></li> <li><p><strong>父容器设置宽度100%，echarts渲染宽度只有100px</strong></p> <p>**场景：**父容器设置宽度100%，echarts渲染宽度只有100px</p> <p><strong>原因</strong>：由于我的元素是通过v-show控制的，在组件初始化后的mounted阶段，由于异步数据未获取成功，元素不显示，此时的宽度100%无效，echarts无法获取到元素的宽度，所以使用默认的100px宽度进行渲染。</p> <p>**解决方案：**1.（推荐）正确处理echarts初始化渲染时机，只有元素盒子计算宽度完成后再进行渲染。</p> <ol start="2"><li>使用echarts的<code>resize()</code>方法，在完成数据挂载后重算下canvas的宽度</li> <li>设置固定宽度的容器。</li></ol></li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mk-blog-project/myproject/wram-erp/前端开发总结/路由动态生成侧边栏.html" class="prev">
+        路由动态生成侧边栏原理与实现
+      </a></span> <span class="next"><a href="/mk-blog-project/myproject/wram-erp/前端开发总结/常见问题.html">
+        常见问题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/mk-blog-project/assets/js/app.bac87496.js" defer></script><script src="/mk-blog-project/assets/js/2.b1c6a5e6.js" defer></script><script src="/mk-blog-project/assets/js/31.54984285.js" defer></script>
+  </body>
+</html>

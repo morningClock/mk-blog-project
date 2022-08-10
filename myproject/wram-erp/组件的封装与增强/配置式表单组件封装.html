@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>表单组件封装 | 项目开发笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/mk-blog-project/favicon.ico">
+    <meta name="description" content="MorningClock 项目笔记汇总">
+    
+    <link rel="preload" href="/mk-blog-project/assets/css/0.styles.301486dc.css" as="style"><link rel="preload" href="/mk-blog-project/assets/js/app.bac87496.js" as="script"><link rel="preload" href="/mk-blog-project/assets/js/2.b1c6a5e6.js" as="script"><link rel="preload" href="/mk-blog-project/assets/js/40.948300a2.js" as="script"><link rel="prefetch" href="/mk-blog-project/assets/js/10.19e46dc3.js"><link rel="prefetch" href="/mk-blog-project/assets/js/11.b375208f.js"><link rel="prefetch" href="/mk-blog-project/assets/js/12.00037ac2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/13.9b17db79.js"><link rel="prefetch" href="/mk-blog-project/assets/js/14.172ae2a2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/15.7c863125.js"><link rel="prefetch" href="/mk-blog-project/assets/js/16.e022710b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/17.1a7cab84.js"><link rel="prefetch" href="/mk-blog-project/assets/js/18.7ff0e9f6.js"><link rel="prefetch" href="/mk-blog-project/assets/js/19.9d9b7b96.js"><link rel="prefetch" href="/mk-blog-project/assets/js/20.f8875100.js"><link rel="prefetch" href="/mk-blog-project/assets/js/21.7e620d98.js"><link rel="prefetch" href="/mk-blog-project/assets/js/22.f91162a1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/23.1b0e554e.js"><link rel="prefetch" href="/mk-blog-project/assets/js/24.55876c58.js"><link rel="prefetch" href="/mk-blog-project/assets/js/25.da170451.js"><link rel="prefetch" href="/mk-blog-project/assets/js/26.79c4e1e5.js"><link rel="prefetch" href="/mk-blog-project/assets/js/27.2cbb3337.js"><link rel="prefetch" href="/mk-blog-project/assets/js/28.d4a96bf7.js"><link rel="prefetch" href="/mk-blog-project/assets/js/29.25e2148c.js"><link rel="prefetch" href="/mk-blog-project/assets/js/3.c7aac3f1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/30.cf18d8f9.js"><link rel="prefetch" href="/mk-blog-project/assets/js/31.54984285.js"><link rel="prefetch" href="/mk-blog-project/assets/js/32.7b699509.js"><link rel="prefetch" href="/mk-blog-project/assets/js/33.e5994047.js"><link rel="prefetch" href="/mk-blog-project/assets/js/34.088870d8.js"><link rel="prefetch" href="/mk-blog-project/assets/js/35.bcabbc0b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/36.682668ac.js"><link rel="prefetch" href="/mk-blog-project/assets/js/37.e8a392e1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/38.07179d5b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/39.edb6402a.js"><link rel="prefetch" href="/mk-blog-project/assets/js/4.a9fb322d.js"><link rel="prefetch" href="/mk-blog-project/assets/js/41.4c0b3309.js"><link rel="prefetch" href="/mk-blog-project/assets/js/42.889e7f9a.js"><link rel="prefetch" href="/mk-blog-project/assets/js/43.c7fa0161.js"><link rel="prefetch" href="/mk-blog-project/assets/js/44.b1ff2aad.js"><link rel="prefetch" href="/mk-blog-project/assets/js/45.b6075b1c.js"><link rel="prefetch" href="/mk-blog-project/assets/js/46.2cfe85f4.js"><link rel="prefetch" href="/mk-blog-project/assets/js/47.f9db8363.js"><link rel="prefetch" href="/mk-blog-project/assets/js/48.743059dc.js"><link rel="prefetch" href="/mk-blog-project/assets/js/5.2b90833b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/6.72cfb263.js"><link rel="prefetch" href="/mk-blog-project/assets/js/7.03dee6ea.js"><link rel="prefetch" href="/mk-blog-project/assets/js/8.eaca8184.js"><link rel="prefetch" href="/mk-blog-project/assets/js/9.ee98aea0.js">
+    <link rel="stylesheet" href="/mk-blog-project/assets/css/0.styles.301486dc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mk-blog-project/" class="home-link router-link-active"><!----> <span class="site-name">项目开发笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mk-blog-project/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="nav-link">
+  MK商城
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="nav-link">
+  WRAM ERP管理系统
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mk-blog-project/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="nav-link">
+  MK商城
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="nav-link">
+  WRAM ERP管理系统
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="sidebar-link">WRAM-ERP简介</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目分析</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端开发总结</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>组件的封装与增强</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/svg-icon.html" class="sidebar-link">SVG-ICON</a></li><li><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/树形下拉选择组件封装.html" class="sidebar-link">树形下拉选择</a></li><li><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表格组件封装.html" class="sidebar-link">表格组件封装</a></li><li><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表单组件封装.html" class="active sidebar-link">表单组件封装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表单组件封装.html#封装能力" class="sidebar-link">封装能力</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表单组件封装.html#封装实现" class="sidebar-link">封装实现</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表单组件封装.html#封装使用案例" class="sidebar-link">封装使用案例</a></li></ul></li><li><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/封装技巧与优化总结.html" class="sidebar-link">封装技巧与优化总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>思考与拓展</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>日志</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="表单组件封装"><a href="#表单组件封装" class="header-anchor">#</a> 表单组件封装</h1> <p>​	表单也是后台管理系统中，必不可少的东西之一，而且重复率比较高，可以考虑做一下抽离可以增快我们编写简单表单的工作效率，但是复杂的表单很多情况下无法兼备，比如多项联动，这个暂时没有考虑在内，此处只做了简单表单的一个封装，提高自己的编码效率，实际业务只可能更复杂。</p> <p>​	因为是简单的表单不考虑复杂表单情景，就不用render以增加灵活性的编码了，省事直接使用<code>v-if</code>进行不同类型表单的处理。</p> <h2 id="封装能力"><a href="#封装能力" class="header-anchor">#</a> 封装能力</h2> <ul><li><p>[x] 配置式的生产表单</p></li> <li><p>[x] 不同类型的表单项实现</p> <ul><li>[x] input</li></ul></li> <li><p>[x] input-number</p> <ul><li>[x] password</li> <li>[x] select</li> <li>[x] checkbox</li> <li>[x] date</li> <li>[x] radio</li> <li>[x] switch</li> <li>[x] textarea</li> <li>[x] select-tree</li> <li>[x] 自定义插槽slot</li></ul></li></ul> <h3 id="props属性说明"><a href="#props属性说明" class="header-anchor">#</a> Props属性说明</h3> <table><thead><tr><th>名称</th> <th>作用说明</th></tr></thead> <tbody><tr><td>inline</td> <td>是否独占一行</td></tr> <tr><td>labelWidth</td> <td>标签宽度</td></tr> <tr><td>labelPosition</td> <td>标签名称的未知分布</td></tr> <tr><td>fields</td> <td>表单项绑定配置</td></tr> <tr><td>form</td> <td>绑定的表单</td></tr> <tr><td>action</td> <td>是否拥有按钮组，开启后，通过<code>v-slot:action</code>进行内容编辑。</td></tr></tbody></table> <h2 id="封装实现"><a href="#封装实现" class="header-anchor">#</a> <strong>封装实现</strong></h2> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form</span>
+      <span class="token attr-name">:model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>form<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:rules</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>rules<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>commonForm<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:label-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>labelWidth<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:label-position</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>labelPosition<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">label-suffix</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>:<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:inline</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>inline<span class="token punctuation">&quot;</span></span>
+<span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span>
+        <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>(item, field) in fields<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.key<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.label<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:prop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.key<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">v-bind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.attrs<span class="token punctuation">&quot;</span></span>
+      <span class="token punctuation">&gt;</span></span>
+        //...各种类型的实现
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.type === <span class="token punctuation">'</span>password<span class="token punctuation">'</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        	// ...组件
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="封装使用案例"><a href="#封装使用案例" class="header-anchor">#</a> 封装使用案例</h2> <p><code>template</code></p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>MkForm</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>form<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:fields</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>fields<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:form</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>operateForm<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    // slot
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onSubmit<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>提交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onReset<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>重置<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>MkForm</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+	<span class="token comment">// 表单配置对象</span>
+      fields<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// input类型</span>
+        name<span class="token operator">:</span> <span class="token punctuation">{</span>
+          label<span class="token operator">:</span> <span class="token string">&quot;活动名称&quot;</span><span class="token punctuation">,</span>
+          key<span class="token operator">:</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span>
+          type<span class="token operator">:</span> <span class="token string">&quot;input&quot;</span><span class="token punctuation">,</span>
+          rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> required<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> message<span class="token operator">:</span> <span class="token string">&quot;请输入活动名称&quot;</span><span class="token punctuation">,</span> trigger<span class="token operator">:</span> <span class="token string">&quot;blur&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              min<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+              max<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+              message<span class="token operator">:</span> <span class="token string">&quot;长度在 3 到 5 个字符&quot;</span><span class="token punctuation">,</span>
+              trigger<span class="token operator">:</span> <span class="token string">&quot;blur&quot;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          style<span class="token operator">:</span> <span class="token punctuation">{</span>
+            width<span class="token operator">:</span> <span class="token string">&quot;50%&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// password类型</span>
+        password<span class="token operator">:</span> <span class="token punctuation">{</span>
+          label<span class="token operator">:</span> <span class="token string">&quot;活动密码&quot;</span><span class="token punctuation">,</span>
+          key<span class="token operator">:</span> <span class="token string">&quot;password&quot;</span><span class="token punctuation">,</span>
+          type<span class="token operator">:</span> <span class="token string">&quot;password&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// select下拉框类型</span>
+        region<span class="token operator">:</span> <span class="token punctuation">{</span>
+          label<span class="token operator">:</span> <span class="token string">&quot;活动区域&quot;</span><span class="token punctuation">,</span>
+          key<span class="token operator">:</span> <span class="token string">&quot;region&quot;</span><span class="token punctuation">,</span>
+          type<span class="token operator">:</span> <span class="token string">&quot;select&quot;</span><span class="token punctuation">,</span>
+          options<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              value<span class="token operator">:</span> <span class="token string">&quot;选项1&quot;</span><span class="token punctuation">,</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;黄金糕&quot;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              value<span class="token operator">:</span> <span class="token string">&quot;选项2&quot;</span><span class="token punctuation">,</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;双皮奶&quot;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// 日期选择类型</span>
+        date<span class="token operator">:</span> <span class="token punctuation">{</span>
+          label<span class="token operator">:</span> <span class="token string">&quot;活动时间&quot;</span><span class="token punctuation">,</span>
+          key<span class="token operator">:</span> <span class="token string">&quot;date&quot;</span><span class="token punctuation">,</span>
+          type<span class="token operator">:</span> <span class="token string">&quot;date&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// 开关类型</span>
+        delivery<span class="token operator">:</span> <span class="token punctuation">{</span>
+          label<span class="token operator">:</span> <span class="token string">&quot;即时配送&quot;</span><span class="token punctuation">,</span>
+          key<span class="token operator">:</span> <span class="token string">&quot;delivery&quot;</span><span class="token punctuation">,</span>
+          type<span class="token operator">:</span> <span class="token string">&quot;switch&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// 复选框类型</span>
+        type<span class="token operator">:</span> <span class="token punctuation">{</span>
+          label<span class="token operator">:</span> <span class="token string">&quot;活动性质&quot;</span><span class="token punctuation">,</span>
+          key<span class="token operator">:</span> <span class="token string">&quot;type&quot;</span><span class="token punctuation">,</span>
+          type<span class="token operator">:</span> <span class="token string">&quot;checkbox&quot;</span><span class="token punctuation">,</span>
+          options<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;美食/餐厅线上活动&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;地推活动&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;线下主题活动&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;单纯品牌曝光&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// 单选类型</span>
+        resource<span class="token operator">:</span> <span class="token punctuation">{</span>
+          label<span class="token operator">:</span> <span class="token string">&quot;特殊资源&quot;</span><span class="token punctuation">,</span>
+          key<span class="token operator">:</span> <span class="token string">&quot;resource&quot;</span><span class="token punctuation">,</span>
+          type<span class="token operator">:</span> <span class="token string">&quot;radio&quot;</span><span class="token punctuation">,</span>
+          options<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;男&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;女&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;保密&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// 文本框类型</span>
+        desc<span class="token operator">:</span> <span class="token punctuation">{</span>
+          label<span class="token operator">:</span> <span class="token string">&quot;活动形式&quot;</span><span class="token punctuation">,</span>
+          key<span class="token operator">:</span> <span class="token string">&quot;desc&quot;</span><span class="token punctuation">,</span>
+          type<span class="token operator">:</span> <span class="token string">&quot;textarea&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// select-tree类型</span>
+        organization<span class="token operator">:</span> <span class="token punctuation">{</span>
+          label<span class="token operator">:</span> <span class="token string">&quot;下拉树&quot;</span><span class="token punctuation">,</span>
+          key<span class="token operator">:</span> <span class="token string">&quot;organization&quot;</span><span class="token punctuation">,</span>
+          type<span class="token operator">:</span> <span class="token string">&quot;select-tree&quot;</span><span class="token punctuation">,</span>
+          options<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token comment">// ....</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          optionsProps<span class="token operator">:</span> <span class="token punctuation">{</span>
+            valueName<span class="token operator">:</span> <span class="token string">&quot;value&quot;</span><span class="token punctuation">,</span>
+            label<span class="token operator">:</span> <span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span>
+            children<span class="token operator">:</span> <span class="token string">&quot;children&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// 表单</span>
+      form<span class="token operator">:</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        password<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        region<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        date<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        delivery<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        type<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        resource<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        desc<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        organization<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表格组件封装.html" class="prev">
+        表格组件封装
+      </a></span> <span class="next"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/封装技巧与优化总结.html">
+        封装技巧与优化总结
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/mk-blog-project/assets/js/app.bac87496.js" defer></script><script src="/mk-blog-project/assets/js/2.b1c6a5e6.js" defer></script><script src="/mk-blog-project/assets/js/40.948300a2.js" defer></script>
+  </body>
+</html>

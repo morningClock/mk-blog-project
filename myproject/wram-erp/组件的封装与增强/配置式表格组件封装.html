@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>表格组件封装 | 项目开发笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/mk-blog-project/favicon.ico">
+    <meta name="description" content="MorningClock 项目笔记汇总">
+    
+    <link rel="preload" href="/mk-blog-project/assets/css/0.styles.301486dc.css" as="style"><link rel="preload" href="/mk-blog-project/assets/js/app.bac87496.js" as="script"><link rel="preload" href="/mk-blog-project/assets/js/2.b1c6a5e6.js" as="script"><link rel="preload" href="/mk-blog-project/assets/js/17.1a7cab84.js" as="script"><link rel="prefetch" href="/mk-blog-project/assets/js/10.19e46dc3.js"><link rel="prefetch" href="/mk-blog-project/assets/js/11.b375208f.js"><link rel="prefetch" href="/mk-blog-project/assets/js/12.00037ac2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/13.9b17db79.js"><link rel="prefetch" href="/mk-blog-project/assets/js/14.172ae2a2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/15.7c863125.js"><link rel="prefetch" href="/mk-blog-project/assets/js/16.e022710b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/18.7ff0e9f6.js"><link rel="prefetch" href="/mk-blog-project/assets/js/19.9d9b7b96.js"><link rel="prefetch" href="/mk-blog-project/assets/js/20.f8875100.js"><link rel="prefetch" href="/mk-blog-project/assets/js/21.7e620d98.js"><link rel="prefetch" href="/mk-blog-project/assets/js/22.f91162a1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/23.1b0e554e.js"><link rel="prefetch" href="/mk-blog-project/assets/js/24.55876c58.js"><link rel="prefetch" href="/mk-blog-project/assets/js/25.da170451.js"><link rel="prefetch" href="/mk-blog-project/assets/js/26.79c4e1e5.js"><link rel="prefetch" href="/mk-blog-project/assets/js/27.2cbb3337.js"><link rel="prefetch" href="/mk-blog-project/assets/js/28.d4a96bf7.js"><link rel="prefetch" href="/mk-blog-project/assets/js/29.25e2148c.js"><link rel="prefetch" href="/mk-blog-project/assets/js/3.c7aac3f1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/30.cf18d8f9.js"><link rel="prefetch" href="/mk-blog-project/assets/js/31.54984285.js"><link rel="prefetch" href="/mk-blog-project/assets/js/32.7b699509.js"><link rel="prefetch" href="/mk-blog-project/assets/js/33.e5994047.js"><link rel="prefetch" href="/mk-blog-project/assets/js/34.088870d8.js"><link rel="prefetch" href="/mk-blog-project/assets/js/35.bcabbc0b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/36.682668ac.js"><link rel="prefetch" href="/mk-blog-project/assets/js/37.e8a392e1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/38.07179d5b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/39.edb6402a.js"><link rel="prefetch" href="/mk-blog-project/assets/js/4.a9fb322d.js"><link rel="prefetch" href="/mk-blog-project/assets/js/40.948300a2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/41.4c0b3309.js"><link rel="prefetch" href="/mk-blog-project/assets/js/42.889e7f9a.js"><link rel="prefetch" href="/mk-blog-project/assets/js/43.c7fa0161.js"><link rel="prefetch" href="/mk-blog-project/assets/js/44.b1ff2aad.js"><link rel="prefetch" href="/mk-blog-project/assets/js/45.b6075b1c.js"><link rel="prefetch" href="/mk-blog-project/assets/js/46.2cfe85f4.js"><link rel="prefetch" href="/mk-blog-project/assets/js/47.f9db8363.js"><link rel="prefetch" href="/mk-blog-project/assets/js/48.743059dc.js"><link rel="prefetch" href="/mk-blog-project/assets/js/5.2b90833b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/6.72cfb263.js"><link rel="prefetch" href="/mk-blog-project/assets/js/7.03dee6ea.js"><link rel="prefetch" href="/mk-blog-project/assets/js/8.eaca8184.js"><link rel="prefetch" href="/mk-blog-project/assets/js/9.ee98aea0.js">
+    <link rel="stylesheet" href="/mk-blog-project/assets/css/0.styles.301486dc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mk-blog-project/" class="home-link router-link-active"><!----> <span class="site-name">项目开发笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mk-blog-project/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="nav-link">
+  MK商城
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="nav-link">
+  WRAM ERP管理系统
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mk-blog-project/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="nav-link">
+  MK商城
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="nav-link">
+  WRAM ERP管理系统
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="sidebar-link">WRAM-ERP简介</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目分析</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端开发总结</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>组件的封装与增强</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/svg-icon.html" class="sidebar-link">SVG-ICON</a></li><li><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/树形下拉选择组件封装.html" class="sidebar-link">树形下拉选择</a></li><li><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表格组件封装.html" class="active sidebar-link">表格组件封装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表格组件封装.html#场景" class="sidebar-link">场景</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表格组件封装.html#封装什么" class="sidebar-link">封装什么？</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表格组件封装.html#为什么封装" class="sidebar-link">为什么封装？</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表格组件封装.html#封装能力" class="sidebar-link">封装能力</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表格组件封装.html#封装实现" class="sidebar-link">封装实现</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表格组件封装.html#封装使用案例" class="sidebar-link">封装使用案例</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表格组件封装.html#拓展" class="sidebar-link">拓展</a></li></ul></li><li><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表单组件封装.html" class="sidebar-link">表单组件封装</a></li><li><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/封装技巧与优化总结.html" class="sidebar-link">封装技巧与优化总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>思考与拓展</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>日志</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="表格组件封装"><a href="#表格组件封装" class="header-anchor">#</a> 表格组件封装</h1> <h2 id="场景"><a href="#场景" class="header-anchor">#</a> 场景</h2> <p>在ERP系统中的零售、采购、销售、仓库、财务、商品模块页面都是基于表的增删改查，就是基于一个表格进行数据的增删改查，如果每次都选择使用Element的template写法来编写，耗时耗力需要不断重复的编写类似的代码，十分麻烦，而且写出来的模板代码也掺杂了许多模板语法，也不利于后期阅读与代码维护。此时针对这种重复的场景可以进行业务组件的抽离与封装。</p> <h2 id="封装什么"><a href="#封装什么" class="header-anchor">#</a> <strong>封装什么？</strong></h2> <p>在开始封装前，都需要思考，什么代码是重复且无意义的，比如重复编写一个表格，那么我们只关心它定义的列名，渲染的table数据，以及每个列渲染的方式，我们可以思考如何从<code>template</code>写法转化为<code>Json schema</code>写法是否更为简洁（即配置式的写法，可以参考<code>antv</code>进行实现）。我们把结构抽象出去，只配置我们需要关心的“变化”部分，就更加容易阅读了。</p> <h2 id="为什么封装"><a href="#为什么封装" class="header-anchor">#</a> 为什么封装？</h2> <p>我们先观察一下我们需要抽离封装的页面模块的组成。</p> <p><img src="/mk-blog-project/assets/img/模块划分.a3bbe54c.jpg" alt="模块划分"></p> <p>根据观察，我们每一个管理页面的组成都大致分为了以上部分，但是还是有一些部分需要定制化的实现的，比如零售、采购、销售的数据不是全部从接口中获取数据，有些需要定制化的编写实现逻辑。</p> <p>**思考：**由于接口的实现和数据返回的格式都有所不同，为了<code>灵活性</code>就不能进行高度封装。但是我们可以进行常用组件的封装，简化页面的搭建过程，简化template部分的臃肿冗余的结构代码。</p> <p>那么我们就需要思考哪部分是相对固定或者说可以进行抽象来完美覆盖业务实现的。很明显重复部分就是Table和Form的表单，所以我们需要抽象Table和Form组件。</p> <h2 id="封装能力"><a href="#封装能力" class="header-anchor">#</a> 封装能力</h2> <ul><li>[x] 表格渲染</li> <li>[x] 复选列配置</li> <li>[x] 序号列配置</li> <li>[x] 列配置
+<ul><li>[x] 默认渲染</li> <li>[x] 回调自定义渲染</li> <li>[x] 插槽自定义渲染</li> <li>[x] 表单输入类型渲染</li></ul></li> <li>[x] 分页封装</li></ul> <p><strong>Props属性说明：</strong></p> <table><thead><tr><th>名称</th> <th>作用说明</th></tr></thead> <tbody><tr><td>columns</td> <td>表格结构约束</td></tr> <tr><td>data</td> <td>表格渲染数据</td></tr> <tr><td>index</td> <td>是否开启排序列</td></tr> <tr><td>checkbox</td> <td>是否开启复选列</td></tr> <tr><td>loading</td> <td>控制表格加载状态</td></tr> <tr><td>pagination</td> <td>表格页的渲染属性<br>pagination: {pageSize: 10, total: 0, currentPage: 1,}</td></tr> <tr><td>showSummary</td> <td>是否显示总计行</td></tr> <tr><td>summaryMethod</td> <td>总计行的计算方法</td></tr> <tr><td>border</td> <td>是否开启表格边框</td></tr></tbody></table> <p><strong>事件：</strong></p> <table><thead><tr><th>事件名称</th> <th>参数</th> <th>说明</th></tr></thead> <tbody><tr><td>sort-change</td> <td>{ column, prop, order }</td> <td>排序发生改变时触发</td></tr> <tr><td>size-change</td> <td>pageSize</td> <td>页面元素个数大小发生改变时触发</td></tr> <tr><td>current-change</td> <td>currentPage</td> <td>页面改变时触发</td></tr></tbody></table> <p><strong>函数调用：</strong></p> <table><thead><tr><th>函数</th> <th>return</th> <th>说明</th></tr></thead> <tbody><tr><td>clearSelection</td> <td></td> <td>清除所有复选框选择</td></tr> <tr><td>validateAll</td> <td>Promise: valid</td> <td>校验所有表格中的表单元素，返回校验结果</td></tr> <tr><td>clearValidateAll</td> <td></td> <td>清除表格中的所有校验</td></tr></tbody></table> <h2 id="封装实现"><a href="#封装实现" class="header-anchor">#</a> 封装实现</h2> <ol><li><p>默认渲染细节</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-table</span> <span class="token attr-name">...</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item of columns<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    	&lt;el-table-column
+          :key=&quot;item.prop&quot;    // 列的key
+          :prop=&quot;item.prop&quot;	  // 该列渲染data中的属性名称
+          :label=&quot;item.label&quot; // 配置该列的列名
+          :width=&quot;item.width&quot; // 配置该列的宽度
+          v-bind=&quot;item.attrs&quot; // 将传入的attrs属性，全部传递至该组件
+        /&gt;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li> <li><p>插槽渲染
+使用场景：更灵活的配置渲染，比如tag标签，或者其它自定义渲染都可以使用该方式。</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-table</span> <span class="token attr-name">...</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item of columns<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    	&lt;el-table-column
+          :key=&quot;item.prop&quot;    // 列的key
+          :prop=&quot;item.prop&quot;	  // 该列渲染data中的属性名称
+          :label=&quot;item.label&quot; // 配置该列的列名
+          :width=&quot;item.width&quot; // 配置该列的宽度
+          v-bind=&quot;item.attrs&quot; // 将传入的attrs属性，全部传递至该组件
+        /&gt;
+			// 使用slot获取element slot的列数据并使用bind传递至上级组件的scoped中，实现slot的传递渲染
+        	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">slot-scope</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scoped<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span>
+                  <span class="token attr-name">:name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.prop<span class="token punctuation">&quot;</span></span>
+                  <span class="token attr-name">:row</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scoped.row<span class="token punctuation">&quot;</span></span>
+                  <span class="token attr-name">:index</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scoped.$index<span class="token punctuation">&quot;</span></span>
+                <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table-column</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li> <li><p>回调渲染</p> <p>使用场景：需要对列数据进行一步计算时候可以使用。</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-table</span> <span class="token attr-name">...</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item of columns<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    	&lt;el-table-column
+          :key=&quot;item.prop&quot;    // 列的key
+          :prop=&quot;item.prop&quot;	  // 该列渲染data中的属性名称
+          :label=&quot;item.label&quot; // 配置该列的列名
+          :width=&quot;item.width&quot; // 配置该列的宽度
+          v-bind=&quot;item.attrs&quot; // 将传入的attrs属性，全部传递至该组件
+        /&gt;
+			// 使用v-html实现调用回调获取回调结果并渲染至template中
+        	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">slot-scope</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scoped<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-html</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.callback &amp;&amp; item.callback(scoped.row)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table-column</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li></ol> <h2 id="封装使用案例"><a href="#封装使用案例" class="header-anchor">#</a> 封装使用案例</h2> <p><code>template</code></p> <div class="language-vue extra-class"><pre class="language-vue"><code>&lt;MkTable
+    :columns=&quot;columns&quot; // 列配置
+    :data=&quot;tableData&quot;  // 渲染的表格数据
+    index			   // 是否开启序号列
+    checkbox		   // 是否使用复选列
+    @selection-change=&quot;handleSelectionChange&quot;	// 复选列选项被选中时触发
+    @sort-change=&quot;handleSortChange&quot;				// 排序
+    :pagination=&quot;pagination&quot;					// 分页功能的配置
+    @size-change=&quot;handleSizeChange&quot;				// 分页-分页size的选择触发事件
+    @current-change=&quot;handleCurrentChange&quot;		// 分页-当前分页改变触发事件
+&gt;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">#tag</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scoped<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-tag</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>medium<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{ scoped.row.tag }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-tag</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>MkTable</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><code>script</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+    <span class="token function-variable function">data</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 1.列配置</span>
+          <span class="token literal-property property">columns</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token comment">// 默认配置</span>
+            <span class="token punctuation">{</span>
+              <span class="token literal-property property">prop</span><span class="token operator">:</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">&quot;姓名&quot;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">prop</span><span class="token operator">:</span> <span class="token string">&quot;address&quot;</span><span class="token punctuation">,</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">&quot;地址&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token comment">// 回调函数自定义渲染</span>
+            <span class="token punctuation">{</span>
+              <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;function&quot;</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">prop</span><span class="token operator">:</span> <span class="token string">&quot;date&quot;</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">&quot;日期&quot;</span><span class="token punctuation">,</span>
+              <span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">row</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> row<span class="token punctuation">.</span>date <span class="token operator">+</span> <span class="token string">&quot;-&lt;strong&gt;new&lt;/strong&gt;&quot;</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">sortable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string-property property">&quot;sort-by&quot;</span><span class="token operator">:</span> <span class="token string">&quot;aaa&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token comment">// 插槽渲染自定义内容</span>
+            <span class="token punctuation">{</span>
+              <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;slot&quot;</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">prop</span><span class="token operator">:</span> <span class="token string">&quot;tag&quot;</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">&quot;标签&quot;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token comment">// 2.数据源，根据columns的prop进行对应属性的渲染</span>
+          <span class="token literal-property property">tableData</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token comment">// 3.分页配置</span>
+          <span class="token literal-property property">pagination</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">pageSize</span><span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">total</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">currentPage</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="拓展"><a href="#拓展" class="header-anchor">#</a> 拓展</h2> <p>​	封装了基础的配置式Table，可以避免写大量的template，编码效率蹭蹭往上提，现在写一个重复性高的表格只需要20分钟不到就能完成，当然封装通用组件可以更加快，几乎可以说只需要修改参数配置就可以完成一页的编写。此处只总结了基础的配置式增强表格的实现，通用业务可以根据情况进行封装。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/树形下拉选择组件封装.html" class="prev">
+        树形下拉选择
+      </a></span> <span class="next"><a href="/mk-blog-project/myproject/wram-erp/组件的封装与增强/配置式表单组件封装.html">
+        表单组件封装
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/mk-blog-project/assets/js/app.bac87496.js" defer></script><script src="/mk-blog-project/assets/js/2.b1c6a5e6.js" defer></script><script src="/mk-blog-project/assets/js/17.1a7cab84.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>商品模块表设计 | 项目开发笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/mk-blog-project/favicon.ico">
+    <meta name="description" content="MorningClock 项目笔记汇总">
+    
+    <link rel="preload" href="/mk-blog-project/assets/css/0.styles.301486dc.css" as="style"><link rel="preload" href="/mk-blog-project/assets/js/app.bac87496.js" as="script"><link rel="preload" href="/mk-blog-project/assets/js/2.b1c6a5e6.js" as="script"><link rel="preload" href="/mk-blog-project/assets/js/3.c7aac3f1.js" as="script"><link rel="prefetch" href="/mk-blog-project/assets/js/10.19e46dc3.js"><link rel="prefetch" href="/mk-blog-project/assets/js/11.b375208f.js"><link rel="prefetch" href="/mk-blog-project/assets/js/12.00037ac2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/13.9b17db79.js"><link rel="prefetch" href="/mk-blog-project/assets/js/14.172ae2a2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/15.7c863125.js"><link rel="prefetch" href="/mk-blog-project/assets/js/16.e022710b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/17.1a7cab84.js"><link rel="prefetch" href="/mk-blog-project/assets/js/18.7ff0e9f6.js"><link rel="prefetch" href="/mk-blog-project/assets/js/19.9d9b7b96.js"><link rel="prefetch" href="/mk-blog-project/assets/js/20.f8875100.js"><link rel="prefetch" href="/mk-blog-project/assets/js/21.7e620d98.js"><link rel="prefetch" href="/mk-blog-project/assets/js/22.f91162a1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/23.1b0e554e.js"><link rel="prefetch" href="/mk-blog-project/assets/js/24.55876c58.js"><link rel="prefetch" href="/mk-blog-project/assets/js/25.da170451.js"><link rel="prefetch" href="/mk-blog-project/assets/js/26.79c4e1e5.js"><link rel="prefetch" href="/mk-blog-project/assets/js/27.2cbb3337.js"><link rel="prefetch" href="/mk-blog-project/assets/js/28.d4a96bf7.js"><link rel="prefetch" href="/mk-blog-project/assets/js/29.25e2148c.js"><link rel="prefetch" href="/mk-blog-project/assets/js/30.cf18d8f9.js"><link rel="prefetch" href="/mk-blog-project/assets/js/31.54984285.js"><link rel="prefetch" href="/mk-blog-project/assets/js/32.7b699509.js"><link rel="prefetch" href="/mk-blog-project/assets/js/33.e5994047.js"><link rel="prefetch" href="/mk-blog-project/assets/js/34.088870d8.js"><link rel="prefetch" href="/mk-blog-project/assets/js/35.bcabbc0b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/36.682668ac.js"><link rel="prefetch" href="/mk-blog-project/assets/js/37.e8a392e1.js"><link rel="prefetch" href="/mk-blog-project/assets/js/38.07179d5b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/39.edb6402a.js"><link rel="prefetch" href="/mk-blog-project/assets/js/4.a9fb322d.js"><link rel="prefetch" href="/mk-blog-project/assets/js/40.948300a2.js"><link rel="prefetch" href="/mk-blog-project/assets/js/41.4c0b3309.js"><link rel="prefetch" href="/mk-blog-project/assets/js/42.889e7f9a.js"><link rel="prefetch" href="/mk-blog-project/assets/js/43.c7fa0161.js"><link rel="prefetch" href="/mk-blog-project/assets/js/44.b1ff2aad.js"><link rel="prefetch" href="/mk-blog-project/assets/js/45.b6075b1c.js"><link rel="prefetch" href="/mk-blog-project/assets/js/46.2cfe85f4.js"><link rel="prefetch" href="/mk-blog-project/assets/js/47.f9db8363.js"><link rel="prefetch" href="/mk-blog-project/assets/js/48.743059dc.js"><link rel="prefetch" href="/mk-blog-project/assets/js/5.2b90833b.js"><link rel="prefetch" href="/mk-blog-project/assets/js/6.72cfb263.js"><link rel="prefetch" href="/mk-blog-project/assets/js/7.03dee6ea.js"><link rel="prefetch" href="/mk-blog-project/assets/js/8.eaca8184.js"><link rel="prefetch" href="/mk-blog-project/assets/js/9.ee98aea0.js">
+    <link rel="stylesheet" href="/mk-blog-project/assets/css/0.styles.301486dc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mk-blog-project/" class="home-link router-link-active"><!----> <span class="site-name">项目开发笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mk-blog-project/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="nav-link">
+  MK商城
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="nav-link">
+  WRAM ERP管理系统
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mk-blog-project/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="nav-link">
+  MK商城
+</a></div><div class="nav-item"><a href="/mk-blog-project/myproject/wram-erp/项目简介.html" class="nav-link">
+  WRAM ERP管理系统
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/mk-blog-project/myproject/mk-shop/项目简介.html" class="sidebar-link">MK-Shop 简介</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>商城数据库设计</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mk-blog-project/myproject/mk-shop/商城数据库设计/商品模块ER图.html" class="sidebar-link">商品模块ER关系图</a></li><li><a href="/mk-blog-project/myproject/mk-shop/商城数据库设计/设计店铺表.html" class="sidebar-link">设计店铺表</a></li><li><a href="/mk-blog-project/myproject/mk-shop/商城数据库设计/设计品牌与分类表.html" class="sidebar-link">设计品牌与分类表</a></li><li><a href="/mk-blog-project/myproject/mk-shop/商城数据库设计/商品模块表设计.html" class="active sidebar-link">商品模块表设计</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/mk-shop/商城数据库设计/商品模块表设计.html#产品表" class="sidebar-link">产品表</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/mk-shop/商城数据库设计/商品模块表设计.html#商品表" class="sidebar-link">商品表</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/mk-shop/商城数据库设计/商品模块表设计.html#属性表" class="sidebar-link">属性表</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/mk-shop/商城数据库设计/商品模块表设计.html#属性值表" class="sidebar-link">属性值表</a></li><li class="sidebar-sub-header"><a href="/mk-blog-project/myproject/mk-shop/商城数据库设计/商品模块表设计.html#关键业务设计与说明" class="sidebar-link">关键业务设计与说明</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端开发总结</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>思考与拓展</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="商品模块表设计"><a href="#商品模块表设计" class="header-anchor">#</a> 商品模块表设计</h1> <h2 id="产品表"><a href="#产品表" class="header-anchor">#</a> 产品表</h2> <h3 id="产品表-er-图"><a href="#产品表-er-图" class="header-anchor">#</a> 产品表 ER 图</h3> <p><img src="/mk-blog-project/assets/img/产品表ER图.11bb9825.png" alt="image-20220726151942938"></p> <h4 id="关键数据说明"><a href="#关键数据说明" class="header-anchor">#</a> 关键数据说明</h4> <ul><li><p>商家店铺编号：关联新增该产品店铺id，产品由商家的店铺管理</p></li> <li><p>品牌编号：可以为空，没有品牌</p> <p>一些散装的可能没有品牌，比如花生之类的</p></li> <li><p>分类编号：关联分类，用于产品分类检索。</p> <p>比如：属于手机类，会在手机分类下面查询得到该商品。</p></li> <li><p>参数属性：关联产品所选的参数属性，形成sku。</p> <p>比如：iphone8产品拥有的属性：</p> <ul><li><p>颜色</p> <p>黑、白、蓝</p></li> <li><p>内存</p> <p>128G 256G 1TB</p></li></ul> <p>获取的商品详情时，可以通过该属性，查询所有可选的sku参数，然后用于页面可选选项的显示。</p> <blockquote><p>表优化：如果想增加一些商品的常规规格属性，而又不想每次都添加时，可以增加一个品类表通过关联品类来设置通用属性。比如说衣服品类，都需要设置面料，规格尺寸，厂家等属性，可以通过品类进行约束设置。</p></blockquote></li></ul> <h3 id="产品表数据结构图"><a href="#产品表数据结构图" class="header-anchor">#</a> 产品表数据结构图</h3> <p><img src="/mk-blog-project/assets/img/产品表数据结构图.efc7897a.png" alt="image-20220726152202399"></p> <h4 id="建表语句"><a href="#建表语句" class="header-anchor">#</a> 建表语句</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>CREATE TABLE `t_prod` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '产品id',
+  `shop_id` bigint(20) unsigned DEFAULT NULL COMMENT '所属商家店铺',
+  `brand_id` bigint(20) unsigned DEFAULT NULL COMMENT '所属品牌id',
+  `category_id` bigint(20) unsigned DEFAULT NULL COMMENT '所属分类id',
+  `name` varchar(300) NOT NULL COMMENT '产品名称',
+  `title` varchar(300) DEFAULT NULL COMMENT '产品标题',
+  `sub_title` varchar(300) DEFAULT NULL COMMENT '产品副标题',
+  `picture` json DEFAULT NULL COMMENT '产品主图',
+  `images` json DEFAULT NULL COMMENT '产品图片集',
+  `description` varchar(500) DEFAULT NULL COMMENT '产品简介',
+  `content` json DEFAULT NULL COMMENT '产品详细描述',
+  `price` decimal(15,2) DEFAULT NULL COMMENT '产品现价',
+  `ori_price` decimal(15,2) DEFAULT NULL COMMENT '产品原价',
+  `attrs` json DEFAULT NULL COMMENT '产品可选的属性',
+  `status` tinyint(1) unsigned DEFAULT '0' COMMENT '发布状态(0:未上架(默认),1:已上架)',
+  `is_deleted` tinyint(1) unsigned DEFAULT '0' COMMENT '逻辑删除(0:正常(默认), 1:已删除)',
+  `putaway_time` datetime DEFAULT NULL COMMENT '产品上架时间',
+  `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '记录时间',
+  `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+</code></pre></div><h2 id="商品表"><a href="#商品表" class="header-anchor">#</a> 商品表</h2> <h3 id="商品表er图"><a href="#商品表er图" class="header-anchor">#</a> 商品表ER图</h3> <p><img src="/mk-blog-project/assets/img/商品表ER图.f5f3a141.png" alt="image-20220726152919025"></p> <h3 id="产品表数据结构图-2"><a href="#产品表数据结构图-2" class="header-anchor">#</a> 产品表数据结构图</h3> <p><img src="/mk-blog-project/assets/img/商品数据结构图.8090c00e.png" alt="image-20220726155024104"></p> <h4 id="建表语句-2"><a href="#建表语句-2" class="header-anchor">#</a> 建表语句</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>CREATE TABLE `t_sku` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'sku商品id',
+  `prod_id` bigint(20) unsigned NOT NULL COMMENT '所属产品的id',
+  `sku_name` varchar(200) DEFAULT NULL COMMENT 'sku商品名称',
+  `sku_attrs` json DEFAULT NULL COMMENT '销售属性组合json 格式是{a1:v1;a2:v2}',
+  `price` decimal(15,2) DEFAULT NULL COMMENT '商品现价',
+  `ori_price` decimal(15,2) DEFAULT NULL COMMENT '商品原价',
+  `stock` int(11) DEFAULT NULL COMMENT '商品在付款减库存的状态下，该sku上未付款的订单数量',
+  `actual_stock` int(11) DEFAULT NULL COMMENT '实际库存',
+  `sold_num` int(11) DEFAULT NULL COMMENT '单品销量',
+  `picture` json DEFAULT NULL COMMENT '单品主图',
+  `status` tinyint(1) DEFAULT '0' COMMENT '发布状态(0:未上架(默认),1:已上架)',
+  `is_deleted` tinyint(1) unsigned DEFAULT '0' COMMENT '逻辑删除(0:正常(默认), 1:已删除)',
+  `putaway_time` datetime DEFAULT NULL COMMENT '单品上架时间',
+  `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+</code></pre></div><h2 id="属性表"><a href="#属性表" class="header-anchor">#</a> 属性表</h2> <h3 id="er图"><a href="#er图" class="header-anchor">#</a> ER图</h3> <p><img src="/mk-blog-project/assets/img/属性表ER图.7cd52ca0.png" alt="image-20220726171104945"></p> <h4 id="关键数据说明-2"><a href="#关键数据说明-2" class="header-anchor">#</a> 关键数据说明</h4> <ul><li><p>参数类型：规格 OR 参数属性</p> <p>规格类型是不可选择的，而参数类型是供sku使用。</p></li> <li><p>店铺id:</p> <p>参数由店铺创建，可以用于所有店铺内的产品。</p></li></ul> <h3 id="数据结构图"><a href="#数据结构图" class="header-anchor">#</a> 数据结构图</h3> <p><img src="/mk-blog-project/assets/img/属性表数据结构图.7299b6f2.png" alt="image-20220726173154798"></p> <h4 id="建表语句-3"><a href="#建表语句-3" class="header-anchor">#</a> 建表语句</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>CREATE TABLE `t_prod_attr` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '属性id',
+  `shop_id` bigint(20) unsigned NOT NULL COMMENT '所属店铺id',
+  `attr_name` varchar(50) DEFAULT NULL COMMENT '属性名称',
+  `rule` tinyint(2) DEFAULT '1' COMMENT '1:销售属性(规格); 2:参数属性;',
+  `is_deleted` tinyint(1) unsigned DEFAULT '0' COMMENT '逻辑删除(0:正常(默认), 1:已删除)',
+  `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+</code></pre></div><h2 id="属性值表"><a href="#属性值表" class="header-anchor">#</a> 属性值表</h2> <h3 id="er图-2"><a href="#er图-2" class="header-anchor">#</a> ER图</h3> <p><img src="/mk-blog-project/assets/img/属性值表ER图.7f4c6657.png" alt="image-20220726171122444"></p> <h3 id="数据结构图-2"><a href="#数据结构图-2" class="header-anchor">#</a> 数据结构图</h3> <p><img src="/mk-blog-project/assets/img/属性值表数据结构图.b9ca8bcd.png" alt="image-20220726173238957"></p> <h4 id="建表语句-4"><a href="#建表语句-4" class="header-anchor">#</a> 建表语句</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>CREATE TABLE `t_prod_attr_value` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '属性值的id',
+  `attr_id` bigint(20) unsigned NOT NULL COMMENT '所属属性参数id',
+  `attr_value` varchar(50) DEFAULT NULL COMMENT '属性值',
+  `is_deleted` tinyint(1) unsigned DEFAULT '0' COMMENT '逻辑删除(0:正常(默认), 1:已删除)',
+  `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+</code></pre></div><h2 id="关键业务设计与说明"><a href="#关键业务设计与说明" class="header-anchor">#</a> 关键业务设计与说明</h2> <h3 id="sku商品如何产生"><a href="#sku商品如何产生" class="header-anchor">#</a> SKU商品如何产生？</h3> <p>​	在商家后台管理系统中，当商家新增产品时，需要管理产品对应的SKU商品，完成新增后将SKU商品信息（此处接口参数名设为<code>skuList</code>）一并发送到<code>addProduct</code>相关业务接口中。</p> <p>此时接口处理逻辑：</p> <ol><li><p>插入新产品信息至<code>t_prod</code>表</p></li> <li><p>查询接口传入的prod_id，查询数据库中所有当前产品的sku的ID，存入<code>dbSkuIds</code>的集合中</p></li> <li><p>将接口获取的<code>skuList</code>参数进行过滤，并遍历将数据插入sku表，存在一下处理情况</p> <ul><li><p><code>skuItem</code>（<code>skuItem</code>为接口传入的<code>SkuList</code>遍历出来的单列数据）存在id属性，查询<code>dbSkuIds</code>是否存在该id</p> <ul><li>存在id，则将该列数据更新至指定id的数据库记录中</li> <li>不存在id，插入该列数据</li></ul></li> <li><p><code>skuItem</code>不存在id</p> <p>插入该列数据</p></li></ul></li></ol> <h3 id="如何获取sku选项"><a href="#如何获取sku选项" class="header-anchor">#</a> 如何获取sku选项？</h3> <p>​	在商城端商品详情，需要sku选项展示，并提供给用户选择指定的单品加入购物车，此时需要通过产品字段<code>attrs</code>字段，通过<code>attr</code>的<code>id</code>在<code>t_prod_attr</code>表中所有可选参数，然后再通过<code>t_prod_attr_value</code>查询出所有可选sku选项，把数据整合渲染到商城的供用户选择。</p> <h3 id="如何默认选择sku选项"><a href="#如何默认选择sku选项" class="header-anchor">#</a> 如何默认选择sku选项？</h3> <p>​	点击sku单品进入详情页后，根据<code>sku_id</code>查询sku商品信息，再通过<code>t_sku</code>表的<code>sku_attrs</code>，提取出当前商品对应的sku属性，并让选项高亮。</p> <h3 id="如何获取产品的总销量和总库存"><a href="#如何获取产品的总销量和总库存" class="header-anchor">#</a> 如何获取产品的总销量和总库存？</h3> <h4 id="方案一-创建派生视图-不推荐"><a href="#方案一-创建派生视图-不推荐" class="header-anchor">#</a> 方案一：创建派生视图（不推荐）</h4> <p><img src="/mk-blog-project/assets/img/产品总库存-总销量派生视图表.2f60921d.png" alt="image-20220726152630175"></p> <p>建表语句：</p> <div class="language-mysql extra-class"><pre class="language-text"><code>SELECT prod_id, SUM(stock) AS `total_stock`, sold_num 
+FROM `tz_sku` 
+WHERE `is_delete` = 0 AND `status` = 1 
+GROUP BY prod_id 
+</code></pre></div><blockquote><p>说明：该视图表由sku表派生，用作产品的总销量和总库存查询业务</p> <p>不推荐的原因：</p> <p>1.由于查询视图会执行相应的查询代码，导致效率下降。</p> <p>2.视图/存储过程都应该通过编写程序代码替代，使用程序应用编写可以缓存数据结果，减少查询次数，所以更灵活更利于后期维护。</p></blockquote> <h4 id="方案二-业务代码中执行查询-通过sku表进行查询相关数据-推荐"><a href="#方案二-业务代码中执行查询-通过sku表进行查询相关数据-推荐" class="header-anchor">#</a> 方案二：业务代码中执行查询，通过sku表进行查询相关数据（推荐）</h4> <div class="language-mysql extra-class"><pre class="language-text"><code>SELECT SUM(stock) AS `total_stock`, sold_num 
+FROM `t_sku` 
+WHERE prod_id = `[目标prod_id]` AND `is_delete` = 0 AND `status` = 1 # 排除删除和未上架状态商品
+GROUP BY prod_id 
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mk-blog-project/myproject/mk-shop/商城数据库设计/设计品牌与分类表.html" class="prev">
+        设计品牌与分类表
+      </a></span> <span class="next"><a href="/mk-blog-project/myproject/mk-shop/前端开发总结/页面需求分析.html">
+        页面需求分析
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/mk-blog-project/assets/js/app.bac87496.js" defer></script><script src="/mk-blog-project/assets/js/2.b1c6a5e6.js" defer></script><script src="/mk-blog-project/assets/js/3.c7aac3f1.js" defer></script>
+  </body>
+</html>
